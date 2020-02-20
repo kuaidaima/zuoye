@@ -1,0 +1,80 @@
+创建仓库:
+
+
+1   git init       加上一个文件名
+2 在一个文件中    git init
+3 git clone  加上从github上复制的链接
+
+
+
+一些方法：
+Ctrl+l     清屏
+Unix中      ls -la     列出所有子目录
+Windows中   dir/a    列出所有子目录
+cd ..      返回上一级
+cd     +上文件名          进入该文件
+
+git status      查看仓库状态       
+git add .         把当前目录下所有文件添加到暂存区
+git add xxx        添加xxx文件
+
+git commit -m "描述"            （描述可随意写，记录当前干了什么） 
+git log            	查看版本记录
+git log -p      具体修改了什么
+git log --all --graph     图示全部历史记录
+
+git checkout xxx           穿越到指定的历史节点    
+          		（文件返回到指定的某个更改状况）
+		（xxx指前7位或更多）
+git checkout -        返回之前的版本
+git checkout 标签名            回溯到标签所在的提交
+
+git tag-a 标签名 -m "备注"      附注标签
+git tag   列出所有标签
+git tag -a 标签名 -m "备注" xxxxx            xxxxx表示某个节点的代号     （某次commmit的详细信息）
+
+git show 标签名         查看某个标签的详细信息
+git branch 分支名     创建分支
+
+touch 文件名        创建文件
+
+git checkout -b 分支名       创建并切换至分支
+git merge 分支名      合并分支
+
+git remote add 远程名称 远程地址           添加远程仓库
+git remote    列出所有远程仓库
+
+git push -u 远程名 分支名      上传代码
+		远程名可随意写
+
+git pull            获取远程更新
+
+基本步骤：
+git add .
+git commit -m"描述"
+git log
+
+
+
+
+注意：
+1、git commit -m""      是添加已git add的文件    
+如果git add后再修改了文件,git commit -m""是添加未修改的文件
+例：git add A           git commit -m"添加A"
+之后修改A变成了B
+git commit -""是添加A     不是B
+
+2、输入命令时基本上每个单词后加上空格
+
+3、默认分支：master
+
+4、合并分支      有冲突时：
+		    <<<<<<本分支名
+			.....
+			.....(代码)
+		======
+			.......
+			.......	(代码)
+		>>>>>>合并分支名
+
+自己手动解决
